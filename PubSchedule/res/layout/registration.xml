@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#393939"
+    android:orientation="vertical" >
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1" >
+
+                <TextView
+                    android:id="@+id/textValue2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:gravity="left|bottom"
+                    android:text="Username"
+                    android:textColor="#1fadff"
+                    android:textSize="23sp"
+                    android:textStyle="italic" />
+
+                <ImageView
+                    android:id="@+id/riskValue1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="5"
+                    android:src="@drawable/user" />
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/usernameEditTxt"
+                android:layout_width="250dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="20dp"
+                android:layout_weight="1"
+                android:background="#FFFFFF"
+                android:ems="10"
+                android:textColor="#2b2b2b" >
+
+                <requestFocus />
+            </EditText>
+
+            <LinearLayout
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1" >
+
+                <TextView
+                    android:id="@+id/farmName"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:gravity="left|bottom"
+                    android:text="Password"
+                    android:textColor="#ffe21f"
+                    android:textSize="23sp"
+                    android:textStyle="italic" />
+
+                <ImageView
+                    android:id="@+id/ImageView01"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="5"
+                    android:src="@drawable/key" />
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/passwordEditTxt"
+                android:layout_width="250dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:background="#FFFFFF"
+                android:ems="10"
+                android:inputType="textPassword"
+                android:textColor="#2b2b2b" />
+
+            <Button
+                android:id="@+id/settingsSubmitBtn"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="35dp"
+                android:layout_weight="1"
+                android:background="@drawable/registration_button" />
+        </LinearLayout>
+
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/registered"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/textViewProgress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+</LinearLayout>
