@@ -10,6 +10,25 @@ package com.stonesoup;
 public final class R {
     public static final class attr {
     }
+    public static final class color {
+        public static final int background=0x7f040000;
+        /**   seek back colors (in background_view_rounded_single 
+         */
+        public static final int default_screen_bg=0x7f040003;
+        /**  blue dark 
+         */
+        public static final int light_gray_header_color=0x7f040008;
+        /**  A COLOR NAMED mycolor with value #FFF in #RGB value
+         */
+        public static final int mycolor=0x7f040001;
+        /**  A COLOR NAMED mycolor2 with value #00FFFFFF in #ARGB [A= ALPHA]value
+         */
+        public static final int mycolor2=0x7f040002;
+        public static final int rounded_container_bg=0x7f040004;
+        public static final int rounded_container_bg_blue=0x7f040006;
+        public static final int rounded_container_bg_night=0x7f040005;
+        public static final int rounded_container_border=0x7f040007;
+    }
     public static final class dimen {
         /**  Default screen margins, per the Android Design guidelines. 
 
@@ -17,28 +36,75 @@ public final class R {
          screen margins) for sw720dp devices (e.g. 10" tablets) in landscape here.
     
          */
-        public static final int activity_horizontal_margin=0x7f040000;
-        public static final int activity_vertical_margin=0x7f040001;
+        public static final int activity_horizontal_margin=0x7f050000;
+        public static final int activity_vertical_margin=0x7f050001;
     }
     public static final class drawable {
-        public static final int ic_launcher=0x7f020000;
+        public static final int anemos=0x7f020000;
+        public static final int anemos2=0x7f020001;
+        public static final int appicon=0x7f020002;
+        public static final int arrow_left=0x7f020003;
+        public static final int arrow_right=0x7f020004;
+        public static final int background=0x7f020005;
+        public static final int background_view_rounded_night=0x7f020006;
+        public static final int background_view_rounded_single=0x7f020007;
+        public static final int calendar_cel_selectl=0x7f020008;
+        public static final int calendar_cell=0x7f020009;
+        public static final int calendar_top=0x7f02000a;
+        public static final int dot=0x7f02000b;
+        public static final int ic_launcher=0x7f02000c;
+        public static final int list_item_background=0x7f02000d;
+        public static final int moon=0x7f02000e;
+        public static final int sun=0x7f02000f;
+        public static final int worker=0x7f020010;
+        public static final int worker_blue=0x7f020011;
     }
     public static final class id {
-        public static final int action_settings=0x7f080003;
-        public static final int activity_main_image_rotate_container=0x7f080002;
-        public static final int activity_main_image_selector_container=0x7f080001;
-        public static final int activity_main_root_container=0x7f080000;
+        public static final int ImageView01=0x7f090019;
+        public static final int ImageView02=0x7f090017;
+        public static final int ImageView03=0x7f09001c;
+        public static final int ImageView04=0x7f09001a;
+        public static final int ImageView05=0x7f090013;
+        public static final int ImageView06=0x7f09000c;
+        public static final int ImageView07=0x7f090011;
+        public static final int ImageView08=0x7f09000e;
+        public static final int ImageView09=0x7f090016;
+        public static final int ImageView10=0x7f090014;
+        public static final int TextView01=0x7f090018;
+        public static final int TextView02=0x7f09001b;
+        public static final int TextView03=0x7f09000d;
+        public static final int TextView04=0x7f090015;
+        public static final int TextView05=0x7f090012;
+        public static final int action_settings=0x7f09001d;
+        public static final int calentar_fragment=0x7f090000;
+        public static final int date=0x7f090009;
+        public static final int date_icon=0x7f09000a;
+        public static final int gridview=0x7f090006;
+        public static final int header=0x7f090002;
+        public static final int imageView1=0x7f090008;
+        public static final int imageView2=0x7f090010;
+        public static final int list_fragment=0x7f090001;
+        public static final int next=0x7f090005;
+        public static final int previous=0x7f090003;
+        public static final int scrollView1=0x7f09000b;
+        public static final int text=0x7f090007;
+        public static final int textView1=0x7f09000f;
+        public static final int title=0x7f090004;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
+        public static final int calendar=0x7f030001;
+        public static final int calendar_fragment=0x7f030002;
+        public static final int calendar_item=0x7f030003;
+        public static final int list_fragment=0x7f030004;
     }
     public static final class menu {
-        public static final int main=0x7f070000;
+        public static final int main=0x7f080000;
     }
     public static final class string {
-        public static final int action_settings=0x7f050001;
-        public static final int app_name=0x7f050000;
-        public static final int hello_world=0x7f050002;
+        public static final int action_settings=0x7f060001;
+        public static final int app_name=0x7f060000;
+        public static final int hello_world=0x7f060002;
     }
     public static final class style {
         /** 
@@ -62,10 +128,10 @@ public final class R {
     
  API 14 theme customizations can go here. 
          */
-        public static final int AppBaseTheme=0x7f060000;
+        public static final int AppBaseTheme=0x7f070000;
         /**  Application theme. 
  All customizations that are NOT specific to a particular API-level can go here. 
          */
-        public static final int AppTheme=0x7f060001;
+        public static final int AppTheme=0x7f070001;
     }
 }

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="background">#FFFFFF</color>
+  <!-- A COLOR NAMED mycolor with value #FFF in #RGB value-->
+  <color name="mycolor">#3a3a3a</color>
+  <!-- A COLOR NAMED mycolor2 with value #00FFFFFF in #ARGB [A= ALPHA]value-->
+  <color name="mycolor2">#00FFFFFF</color>
+  
+  <!--  seek back colors (in background_view_rounded_single -->
+  <color name="default_screen_bg">#20324a</color>
+	 <color name="rounded_container_bg">#FFFFFF</color>
+	 <color name="rounded_container_bg_night">#000000</color>
+	 <color name="rounded_container_bg_blue">#1FACFF</color>
+	<color name="rounded_container_border">#3b3f44</color> <!-- blue dark -->
+	 <color name="light_gray_header_color">#646663</color> <!-- green dark -->
+    
+</resources>
