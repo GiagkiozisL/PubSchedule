@@ -3,7 +3,6 @@ package com.stonesoup;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.view.Menu;
-
 import com.parse.ParseAnalytics;
 
 public class MainActivity extends FragmentActivity {

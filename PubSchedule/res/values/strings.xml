@@ -4,5 +4,9 @@
     <string name="app_name">AnemosTheBar</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
+    <string name="usernamelabel">user</string>
+    <string name="positionlabel">position</string>
+    <string name="datelabel">date</string>
+    
 
 </resources>
