@@ -27,13 +27,7 @@ public class ListFragment extends Fragment{
 	ProgressDialog mProgressDialog;
 	ListViewAdapter adapter;
 	private List<EventPopulation> eventPopulationList = null;
-	
-//	@Override
-//	public void onCreate(Bundle savedInstanceState) {
-//		super.onCreate(savedInstanceState);
-//		//setContentView(R.layout.list_fragment);
-//	//	new RemoteDataTask().execute;
-//	}
+
 	@Override
 	  public View onCreateView(LayoutInflater inflater, ViewGroup container,
 	      Bundle savedInstanceState) {
@@ -89,21 +83,10 @@ public class ListFragment extends Fragment{
 
 		    for (ParseObject country : ob) {
 		    	Log.i("TAG", "ouououou");
-//		    	adapter.
-//		        adapter.add((String) country.get("country"));
 		    }       
 		    listView.setAdapter(adapter);       
 		    mProgressDialog.dismiss();
-			
-//	View rootaView = inflater.inflate(R.layout.list_fragment,
-//			container, false);
-//			listView = (ListView) rootaView.findViewById(R.id.list_fragment);
-//			
-//			adapter = new ListViewAdapter(getActivity(),eventPopulationList);
-//			listView.setAdapter(adapter);
-//			mProgressDialog.dismiss();
-			
-		}
+			}
 	}
 	
 }

@@ -1,5 +1,8 @@
 package com.stonesoup;
 
+import java.text.DateFormat;
+import java.util.Date;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,12 +15,15 @@ public class RegistrationActivity extends Activity{
 
 	private EditText username,passEditText;
 	private Button submit;
+	private EventPopulation eventPopulation;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.registration);
-		
+		String currentDateTimeString = DateFormat.getDateInstance().format(new Date());
+		eventPopulation = new EventPopulation();
+		eventPopulation.setCurrentDate(currentDateTimeString);
 		username = (EditText) findViewById(R.id.usernameEditTxt);
 		passEditText = (EditText) findViewById(R.id.passwordEditTxt);
 		

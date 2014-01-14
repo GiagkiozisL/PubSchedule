@@ -8,6 +8,7 @@ import java.util.Locale;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,7 +24,7 @@ import android.widget.Toast;
 public class CalendarFragment extends Fragment {
 
 public GregorianCalendar month, itemmonth;// calendar instances.
-
+private EventPopulation eventPopulation;
 public CalendarAdapter adapter;// adapter instance
 public Handler handler;// for grabbing some event values for showing the dot
                         // marker.
@@ -53,7 +54,7 @@ public ArrayList<String> items; // container to store calendar items which
         handler.post(calendarUpdater);
 
         TextView title = (TextView) view.findViewById(R.id.title);
-        title.setText(android.text.format.DateFormat.format("MMMM yyyy", month));
+        title.setText(android.text.format.DateFormat.format("MMMM yyyy",month));
 
         RelativeLayout previous = (RelativeLayout) view.findViewById(R.id.previous);
 
@@ -82,9 +83,9 @@ public ArrayList<String> items; // container to store calendar items which
                     int position, long id) {
 
                 ((CalendarAdapter) parent.getAdapter()).setSelected(v);
-                String selectedGridDate = CalendarAdapter.dayString
-                        .get(position);
+               String selectedGridDate = CalendarAdapter.dayString.get(position);
                 String[] separatedTime = selectedGridDate.split("-");
+                String formatSelectedDate = (" "+separatedTime[1]+"-"+separatedTime[2]+"-"+separatedTime[0]);
                 String gridvalueString = separatedTime[2].replaceFirst("^0*",
                         "");// taking last part of date. ie; 2 from 2012-12-02.
                 int gridvalue = Integer.parseInt(gridvalueString);
@@ -98,7 +99,11 @@ public ArrayList<String> items; // container to store calendar items which
                 }
                 ((CalendarAdapter) parent.getAdapter()).setSelected(v);
 
-                showToast(selectedGridDate);
+         //       showToast(selectedGridDate);
+                showToast(formatSelectedDate);
+                eventPopulation = new EventPopulation();
+                eventPopulation.setCurrentDate(formatSelectedDate);
+                Log.i("CURRENT DATE", selectedGridDate);
 
             }
         });
@@ -151,17 +156,17 @@ public ArrayList<String> items; // container to store calendar items which
             items.clear();
 
             // Print dates of the current week
-            DateFormat df = new SimpleDateFormat("yyyy-MM-dd",Locale.US);
+            DateFormat df = new SimpleDateFormat("MM-dd-yy",Locale.US);
             String itemvalue;
             for (int i = 0; i < 7; i++) {
                 itemvalue = df.format(itemmonth.getTime());
                 itemmonth.add(GregorianCalendar.DATE, 1);
-                items.add("2012-09-12");
-                items.add("2012-10-07");
-                items.add("2012-10-15");
-                items.add("2012-10-20");
-                items.add("2012-11-30");
-                items.add("2012-11-28");
+                items.add("12-09-12");
+                items.add("07-10-12");
+                items.add("15-10-12");
+                items.add("20-10-12");
+                items.add("30-11-12");
+                items.add("28-11-12");
             }
 
             adapter.setItems(items);

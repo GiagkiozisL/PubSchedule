@@ -7,6 +7,7 @@ public class EventPopulation {
 	private String position;
 	private String flag;
 	private String timezone;
+	private String currentDate = null;
 	
 	public String getName() {
 		return name;
@@ -38,6 +39,12 @@ public class EventPopulation {
 		}
 		public void setTimezone(String timezone) {
 			this.timezone = timezone;
+		}
+		public String getCurrentDate() {
+			return currentDate;
+		}
+		public void setCurrentDate(String currentDate) {
+			this.currentDate = currentDate;
 		}
 	
 }

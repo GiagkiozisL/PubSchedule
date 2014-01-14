@@ -6,6 +6,7 @@ import java.util.List;
 import android.content.Context;
 import android.graphics.Color;
 import android.graphics.Typeface;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +14,7 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class ListViewAdapter extends BaseAdapter{
 
@@ -22,6 +24,7 @@ public class ListViewAdapter extends BaseAdapter{
 	private static final int RED = Color.rgb(246, 125, 114);
 	private static final int BLACK = Color.rgb(43, 43, 43);
 	private static Typeface typeface;
+	private EventPopulation eventPopulation;
 	
 	
 	Context context;
@@ -40,6 +43,12 @@ public class ListViewAdapter extends BaseAdapter{
         this.arraylist.addAll(eventPopulationList);
     //    imageLoader = new ImageLoader(context);
     }
+	
+	@Override
+	public void notifyDataSetChanged() {
+		eventPopulation.getCurrentDate();
+		super.notifyDataSetChanged();
+	}
  
     public class ViewHolder {
     	LinearLayout row;
@@ -83,6 +92,7 @@ public class ListViewAdapter extends BaseAdapter{
         }
         //Default Values
         holder.username.setText(eventPopulationList.get(position).getName());
+       String selectedDate = eventPopulationList.get(position).getDate();
         
         if (eventPopulationList.get(position).getTimezone().equalsIgnoreCase("Night"))
         {
@@ -111,7 +121,7 @@ public class ListViewAdapter extends BaseAdapter{
         	holder.worker.setBackgroundResource(R.drawable.turntable);
         }
       
-        // Listen for ListView Item Click
+        // Listen for ListView Item Click  -future item detail view
 //        view.setOnClickListener(new OnClickListener() {
 // 
 //            @Override
