@@ -21,7 +21,7 @@ import com.parse.ParseQuery;
 
 public class ListFragment extends Fragment{
 
-	private static final int YELLOW = Color.rgb(249, 191, 119);
+	private static final int BLACK = Color.rgb(43, 43, 43);
 	ListView listView;
 	List<ParseObject> ob;
 	ProgressDialog mProgressDialog;
@@ -39,7 +39,7 @@ public class ListFragment extends Fragment{
 	      Bundle savedInstanceState) {
 	    View view = inflater.inflate(R.layout.list_fragment,
 	        container, false);
-	    view.setBackgroundColor(YELLOW);
+	    view.setBackgroundColor(BLACK);
 	    new RemoteDataTask().execute();
 	    return view;
 	  }
@@ -50,7 +50,7 @@ public class ListFragment extends Fragment{
 		protected void onPreExecute() {
             super.onPreExecute();
             mProgressDialog = new ProgressDialog(getActivity());
-            mProgressDialog.setTitle("Parse.com Custom ListView Tutorial");
+            mProgressDialog.setTitle("Retrieving Events from Database");
             mProgressDialog.setMessage("Loading...");
             mProgressDialog.setIndeterminate(false);
             mProgressDialog.show();
@@ -71,6 +71,7 @@ public class ListFragment extends Fragment{
 					map.setName((String) Program.get("username"));
 					map.setPosition((String) Program.get("position"));
 					map.setDate((String) Program.get("date"));
+					map.setTimezone((String) Program.get("situation"));
 					eventPopulationList.add(map);
 					Log.i("JSON  ", map.getDate());
 				}

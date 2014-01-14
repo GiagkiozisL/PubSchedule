@@ -6,6 +6,7 @@ public class EventPopulation {
 	private String date;
 	private String position;
 	private String flag;
+	private String timezone;
 	
 	public String getName() {
 		return name;
@@ -32,5 +33,11 @@ public class EventPopulation {
 	    public void setFlag(String flag) {
 	        this.flag = flag;
 	    }
+		public String getTimezone() {
+			return timezone;
+		}
+		public void setTimezone(String timezone) {
+			this.timezone = timezone;
+		}
 	
 }
