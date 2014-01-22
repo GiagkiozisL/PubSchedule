@@ -15,7 +15,7 @@ public class StartupActivity extends Activity{
 		Parse.initialize(this, 
 				"ph2pneKQy22P3wQMnVeufRZfPzf69ZajhyAUH6e1", 
 				"5mIvqvTCez5LrynMYzg25A1XXwOXT9YDJUrZ216A");
-	
+		
 		Intent registrationActivity = new Intent(getApplicationContext(),RegistrationActivity.class);
 		startActivity(registrationActivity);
 		finish();

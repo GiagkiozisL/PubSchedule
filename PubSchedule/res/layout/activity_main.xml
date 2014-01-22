@@ -5,14 +5,14 @@
 
     <fragment android:name="com.stonesoup.activities.CalendarFragment"
               android:id="@+id/calentar_fragment"
-              android:layout_weight="35"
+              android:layout_weight="45"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
                />
 
     <fragment android:name="com.stonesoup.activities.EventsListFragment"
               android:id="@+id/list_fragment"
-              android:layout_weight="65"
+              android:layout_weight="55"
               android:layout_width="match_parent"
               android:layout_height="match_parent" />
 

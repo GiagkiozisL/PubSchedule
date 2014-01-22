@@ -6,12 +6,9 @@ import java.util.Date;
 import java.util.List;
 
 import android.app.Activity;
-import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.net.ConnectivityManager;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
@@ -33,10 +30,11 @@ import com.stonesoup.model.EventsAgenda;
 public class RegistrationActivity extends Activity{
 
 	private EditText username,passEditText;
-	final Context context = this;
-	String user,pass;
+	
 	private Button submit;
+	String user,pass;
 	private Event eventPopulation;
+	final Context context = this;
 	private ProgressDialog mProgressDialog;
 	
 	@Override
@@ -48,40 +46,40 @@ public class RegistrationActivity extends Activity{
 		eventPopulation.setCurrentDate(currentDateTimeString);
 		username = (EditText) findViewById(R.id.usernameEditTxt);
 		passEditText = (EditText) findViewById(R.id.passwordEditTxt);
-		user = username.toString();
-		pass = passEditText.toString();
+		
 		submit = (Button) findViewById(R.id.settingsSubmitBtn);
 		submit.setOnClickListener(new OnClickListener() {
 			
 			@Override
 			public void onClick(View v) {
-				checkNetworkStatus();
 				user = username.getText().toString();
 				pass = passEditText.getText().toString();
-				
-				 // Send data to Parse.com for verification
-                ParseUser.logInInBackground(user, pass,
-                        new LogInCallback() {
-                            public void done(ParseUser user, ParseException e) {
-                                if (user != null) {
-                                    // If user exist and authenticated, send user to Welcome.class
-                                    Intent intent = new Intent(RegistrationActivity.this,
-                                            MainActivity.class);
-                                    startActivity(intent);
-                                    Toast.makeText(getApplicationContext(),
-                                            "Successfully Logged in",
-                                            Toast.LENGTH_LONG).show();
-                                    finish();
-                                } else {
-                                    Toast.makeText(
-                                            getApplicationContext(),
-                                            "No such user exist, please signup",
-                                            Toast.LENGTH_LONG).show();
-                                }
-                            }
-                        });
-			}
-		});
+				// Send data to Parse.com for verification
+				                ParseUser.logInInBackground(user, pass,
+				                        new LogInCallback() {
+				                            public void done(ParseUser user, ParseException e) {
+				                                if (user != null) {
+				                                    // If user exist and authenticated, send user to Main.class
+				                                	
+//				                                    Intent intent = new Intent(RegistrationActivity.this,
+//				                                            MainActivity.class);
+//				                                    startActivity(intent);
+				                                    Toast.makeText(getApplicationContext(),
+				                                            "Successfully Logged in",
+				                                            Toast.LENGTH_LONG).show();
+//				                                    finish();
+				                                   new RemoteDataTask().execute();
+				                                } else {
+				                                    Toast.makeText(
+				                                            getApplicationContext(),
+				                                            "No such user exist, please signup",
+				                                            Toast.LENGTH_LONG).show();
+				                                }
+				                            }
+				                        });
+							}
+				});
+
 	}
 	
 	private Event createEvent(ParseObject p) {
@@ -137,40 +135,4 @@ public class RegistrationActivity extends Activity{
 			RegistrationActivity.this.finish();
 		}
 	}
-	
-	public void  checkNetworkStatus(){
-
-	    final ConnectivityManager connMgr = (ConnectivityManager)
-	    this.getSystemService(Context.CONNECTIVITY_SERVICE);
-	    final android.net.NetworkInfo wifi = connMgr.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
-	    final android.net.NetworkInfo mobile = connMgr.getNetworkInfo(ConnectivityManager.TYPE_MOBILE);
-	
-	    if( wifi.isAvailable() ){
-	    	Toast.makeText(this, "Wifi" , Toast.LENGTH_LONG).show();
-	     }
-	     else if( mobile.isAvailable() ){
-	    	 Toast.makeText(this, "Mobile 3G " , Toast.LENGTH_LONG).show();
-	     }
-	   else
-	    {
-	     Toast.makeText(this, "No Network Connection" , Toast.LENGTH_LONG).show();
-	 	  AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(context);
-	
-	     alertDialogBuilder.setTitle("No Internet Connection");
-	    alertDialogBuilder
-	    .setMessage("Please check your Wi-Fi or Cellular settings!")
-	    .setCancelable(false)
-	    .setPositiveButton("OK",new DialogInterface.OnClickListener() {
-	   public void onClick(DialogInterface dialog,int id) {
-	      startActivity(new Intent(android.provider.Settings.ACTION_WIRELESS_SETTINGS));
-	
-	    }
-	    });
-	
-	    AlertDialog alertDialog = alertDialogBuilder.create();
-	    alertDialog.show();
-	    Toast.makeText(this, "No Network " , Toast.LENGTH_LONG).show();
-	   }
-	  }
-
 }
