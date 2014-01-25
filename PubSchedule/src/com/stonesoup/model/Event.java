@@ -3,6 +3,7 @@ package com.stonesoup.model;
 public class Event {
 
 	private String name;
+	private String myUserName;
 	private String date;
 	private String position;
 	private String flag;
@@ -14,6 +15,12 @@ public class Event {
 	}
 	public void setName(String name) {
 		this.name = name;
+	}
+	public String getMyUserName() {
+		return myUserName;
+	}
+	public void setMyUserName(String myUserName) {
+		this.myUserName = myUserName;
 	}
 	public String getDate() {
 		return date;

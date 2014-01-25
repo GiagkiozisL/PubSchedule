@@ -17,6 +17,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+import com.stonesoup.model.Event;
 
 public class CalendarAdapter extends BaseAdapter {
 	private Context mContext;
@@ -35,12 +36,15 @@ public class CalendarAdapter extends BaseAdapter {
 	int lastWeekDay;
 	int leftDays;
 	int mnthLength;
+	public static String myUser,user;
 	String itemValue, curentDateString;
 	DateFormat df;
-	private static final int LIGHTBLACK = Color.rgb(31, 172, 255);
+	private static final int LIGHTBLUE = Color.rgb(31, 172, 255);
+	private static final int DARKRED = Color.rgb(187, 56, 80);
 	private ArrayList<String> items;
 	public static List<String> dayString;
 	private View previousView;
+	private Event eventPopulation;
 
 	public CalendarAdapter(Context c, GregorianCalendar monthCalendar) {
 		CalendarAdapter.dayString = new ArrayList<String>();
@@ -90,8 +94,10 @@ public class CalendarAdapter extends BaseAdapter {
 		String[] separatedTime = dayString.get(position).split("-");
 		// taking last part of date. ie; 2 from 2012-12-02
 		String gridvalue = separatedTime[2].replaceFirst("^0*", "");
+		
+		eventPopulation = new Event();
 		// checking whether the day is in current month or not.
-		if ((Integer.parseInt(gridvalue) > 1) && (position < firstDay)) {
+		 if ((Integer.parseInt(gridvalue) > 1) && (position < firstDay)) {
 			// setting offdays to white color.
 			dayView.setTextColor(Color.WHITE);
 			dayView.setClickable(false);
@@ -100,10 +106,11 @@ public class CalendarAdapter extends BaseAdapter {
 			dayView.setTextColor(Color.WHITE);
 			dayView.setClickable(false);
 			dayView.setFocusable(false);
-		} else {
+		}  else {
 			// setting curent month's days in blue color.
-			dayView.setTextColor(LIGHTBLACK);
+			dayView.setTextColor(LIGHTBLUE);
 		}
+		 
 
 		if (dayString.get(position).equals(curentDateString)) {
 			setSelected(v);
@@ -131,6 +138,8 @@ public class CalendarAdapter extends BaseAdapter {
 		} else {
 			iw.setVisibility(View.INVISIBLE);
 		}
+		
+		
 		return v;
 	}
 

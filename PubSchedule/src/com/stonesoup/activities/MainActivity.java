@@ -5,7 +5,9 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.view.Menu;
 
-import com.parse.ParseAnalytics;
+import com.parse.Parse;
+import com.parse.ParseInstallation;
+import com.parse.PushService;
 import com.stonesoup.R;
 import com.stonesoup.activities.CalendarFragment.Callbacks;
 
@@ -17,7 +19,9 @@ public class MainActivity extends FragmentActivity
 		super.onCreate(savedInstanceState);
 		
 		//track statistics around application opens
-		ParseAnalytics.trackAppOpened(getIntent());
+		Parse.initialize(this, "ph2pneKQy22P3wQMnVeufRZfPzf69ZajhyAUH6e1", "5mIvqvTCez5LrynMYzg25A1XXwOXT9YDJUrZ216A");
+		PushService.setDefaultPushCallback(this, MainActivity.class);
+        ParseInstallation.getCurrentInstallation().saveInBackground();
 		setContentView(R.layout.activity_main);
 	}
 

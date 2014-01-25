@@ -3,7 +3,12 @@ package com.stonesoup.utilities;
 import android.app.Application;
 
 import com.parse.Parse;
+import com.parse.ParseInstallation;
 import com.parse.ParseUser;
+import com.parse.PushService;
+import com.stonesoup.activities.MainActivity;
+import com.stonesoup.activities.StartupActivity;
+import com.testflightapp.lib.TestFlight;
 
 public class ParseApplication extends Application{
 
@@ -17,10 +22,8 @@ public class ParseApplication extends Application{
 		
 		Parse.initialize(this, YOUR_APPLICATION_ID, YOUR_CLIENT_KEY);
 		ParseUser.enableAutomaticUser();
-	//	ParseACL defaultACL = new ParseACL;
-		
-	//	defaultACL.setPublicReadAccess(true);
-	//	ParseACL.setDefaultACL(defaultACL, true);
+		TestFlight.takeOff(this, "1d9c1f09-332d-40b5-8b7d-024529b4a2c5");
+	
 	}
 
 	public static String getDaySelected() {

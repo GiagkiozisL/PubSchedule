@@ -36,6 +36,7 @@ public class RegistrationActivity extends Activity{
 	private Event eventPopulation;
 	final Context context = this;
 	private ProgressDialog mProgressDialog;
+	public static String myUserName;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -67,8 +68,13 @@ public class RegistrationActivity extends Activity{
 				                                    Toast.makeText(getApplicationContext(),
 				                                            "Successfully Logged in",
 				                                            Toast.LENGTH_LONG).show();
+				                                    eventPopulation = new Event();
+				                                    myUserName = username.getText().toString();
+				                                    eventPopulation.setMyUserName(myUserName);
+				                             
 //				                                    finish();
 				                                   new RemoteDataTask().execute();
+				                                   
 				                                } else {
 				                                    Toast.makeText(
 				                                            getApplicationContext(),
