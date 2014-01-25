@@ -7,6 +7,9 @@
     <string name="usernamelabel">user</string>
     <string name="positionlabel">position</string>
     <string name="datelabel">date</string>
+    <string name="log_out">log out</string>
+    <string name="unavailability"> Unavailabilty </string>
+    
     
 
 </resources>

@@ -64,25 +64,37 @@ public final class R {
         public static final int list_item_background=0x7f020015;
         public static final int list_selector=0x7f020016;
         public static final int moon=0x7f020017;
-        public static final int registration_button=0x7f020018;
-        public static final int sun=0x7f020019;
-        public static final int turntable=0x7f02001a;
-        public static final int user=0x7f02001b;
-        public static final int wairtress=0x7f02001c;
-        public static final int worker=0x7f02001d;
-        public static final int worker_blue=0x7f02001e;
+        public static final int picker_bottom=0x7f020018;
+        public static final int picker_middle=0x7f020019;
+        public static final int picker_top=0x7f02001a;
+        public static final int registration_button=0x7f02001b;
+        public static final int sun=0x7f02001c;
+        public static final int turntable=0x7f02001d;
+        public static final int user=0x7f02001e;
+        public static final int wairtress=0x7f02001f;
+        public static final int worker=0x7f020020;
+        public static final int worker_blue=0x7f020021;
     }
     public static final class id {
         public static final int ImageView01=0x7f090007;
-        public static final int action_settings=0x7f090019;
+        public static final int action_settings=0x7f090025;
         public static final int calentar_fragment=0x7f090000;
         public static final int date=0x7f090012;
+        public static final int date_container=0x7f090018;
+        public static final int date_display=0x7f09001a;
         public static final int date_icon=0x7f090013;
-        public static final int event_list_item=0x7f090015;
+        public static final int date_minus=0x7f09001b;
+        public static final int date_plus=0x7f090019;
+        public static final int event_list_item=0x7f090021;
         public static final int farmName=0x7f090006;
         public static final int gridview=0x7f090010;
         public static final int header=0x7f09000c;
         public static final int list_fragment=0x7f090001;
+        public static final int log_out=0x7f090026;
+        public static final int month_container=0x7f090014;
+        public static final int month_display=0x7f090016;
+        public static final int month_minus=0x7f090017;
+        public static final int month_plus=0x7f090015;
         public static final int next=0x7f09000f;
         public static final int passwordEditTxt=0x7f090008;
         public static final int previous=0x7f09000d;
@@ -93,31 +105,40 @@ public final class R {
         public static final int text=0x7f090011;
         public static final int textValue2=0x7f090003;
         public static final int textViewProgress=0x7f09000b;
-        public static final int timezone=0x7f090016;
+        public static final int timezone=0x7f090022;
         public static final int title=0x7f09000e;
-        public static final int user=0x7f090017;
+        public static final int unavailability=0x7f090027;
+        public static final int user=0x7f090023;
         public static final int usernameEditTxt=0x7f090005;
-        public static final int usernamelabel=0x7f090018;
-        public static final int worker=0x7f090014;
+        public static final int usernamelabel=0x7f090024;
+        public static final int worker=0x7f090020;
+        public static final int year_container=0x7f09001c;
+        public static final int year_display=0x7f09001e;
+        public static final int year_minus=0x7f09001f;
+        public static final int year_plus=0x7f09001d;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
         public static final int activity_registration=0x7f030001;
         public static final int calendar=0x7f030002;
         public static final int calendar_item=0x7f030003;
-        public static final int fragment_calendar=0x7f030004;
-        public static final int fragment_events_list=0x7f030005;
-        public static final int list_item_event=0x7f030006;
+        public static final int datepicker=0x7f030004;
+        public static final int fragment_calendar=0x7f030005;
+        public static final int fragment_events_list=0x7f030006;
+        public static final int list_item_event=0x7f030007;
     }
     public static final class menu {
         public static final int main=0x7f080000;
+        public static final int main_activity_actions=0x7f080001;
     }
     public static final class string {
         public static final int action_settings=0x7f060001;
         public static final int app_name=0x7f060000;
         public static final int datelabel=0x7f060005;
         public static final int hello_world=0x7f060002;
+        public static final int log_out=0x7f060006;
         public static final int positionlabel=0x7f060004;
+        public static final int unavailability=0x7f060007;
         public static final int usernamelabel=0x7f060003;
     }
     public static final class style {

@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.stonesoup"
     android:versionCode="1"
-    android:versionName="1.0" >
+    android:versionName="1.1" >
 
     <uses-sdk
         android:minSdkVersion="11"
@@ -37,6 +37,8 @@
             </intent-filter>
         </activity>
         <activity android:name="com.stonesoup.activities.RegistrationActivity" >
+        </activity>
+        <activity android:name="com.stonesoup.activities.UnavailabilityDialog" >
         </activity>
         <activity android:name="com.stonesoup.activities.MainActivity" >
         </activity>

@@ -1,9 +1,12 @@
 package com.stonesoup.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.view.Menu;
+import android.view.MenuItem;
 
 import com.parse.Parse;
 import com.parse.ParseInstallation;
@@ -27,7 +30,7 @@ public class MainActivity extends FragmentActivity
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		getMenuInflater().inflate(R.menu.main, menu);
+		getMenuInflater().inflate(R.menu.main_activity_actions, menu);
 		return true;
 	}
 
@@ -37,4 +40,27 @@ public class MainActivity extends FragmentActivity
 		EventsListFragment listFragment = (EventsListFragment) fm.findFragmentById(R.id.list_fragment);
 		listFragment.updateUI();
 	}
+	
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		switch (item.getItemId()) {
+		case R.id.log_out:
+			Intent begin = new Intent(this, RegistrationActivity.class);
+			startActivity(begin);
+			finish();
+			return true;
+		case R.id.unavailability:
+			Intent setUnavailabilityDays = new Intent(this, UnavailabilityDialog.class);
+			startActivity(setUnavailabilityDays);
+			finish();
+		}
+		return super.onOptionsItemSelected(item);
+	}
+	
+//	private void showUnavailabilityDialog() {
+//		Intent unavailable = new Intent();
+//		startActivity(unavailable);
+//		finish();
+//		
+//	}
 }
