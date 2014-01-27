@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#2b2b2b"
+    android:orientation="vertical" >
+    
+    <com.stonesoup.controller.DatePicker
+         android:id="@+id/dateEvent"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content" >
+
+    </com.stonesoup.controller.DatePicker>
+
+    <Switch
+        android:id="@+id/switch1"
+        android:layout_width="wrap_content"
+        android:layout_height="55dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:checked="true"
+        android:textOff="@string/night"
+        android:textOn="@string/day" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp" >
+
+        <Button
+            android:id="@+id/unavSend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/background_view_rounded_single"
+            android:text="Send" />
+
+        <Button
+            android:id="@+id/unavCancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/background_view_rounded_single"
+            android:text="Cancel" />
+
+    </LinearLayout>
+
+</LinearLayout>
+
+

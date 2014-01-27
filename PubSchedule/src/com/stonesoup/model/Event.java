@@ -22,6 +22,7 @@ public class Event {
 	public void setMyUserName(String myUserName) {
 		this.myUserName = myUserName;
 	}
+	
 	public String getDate() {
 		return date;
 	}

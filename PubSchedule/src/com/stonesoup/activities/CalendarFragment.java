@@ -178,6 +178,7 @@ public class CalendarFragment extends Fragment {
 			items.clear();
 
 			// Print dates of the current week
+			//change format here???
 			DateFormat df = new SimpleDateFormat("MM-dd-yy", Locale.US);
 			String itemvalue;
 			for (int i = 0; i < 7; i++) {

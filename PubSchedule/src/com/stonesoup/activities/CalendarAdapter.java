@@ -21,7 +21,7 @@ import com.stonesoup.model.Event;
 
 public class CalendarAdapter extends BaseAdapter {
 	private Context mContext;
-
+	
 	private java.util.Calendar month;
 	public GregorianCalendar pmonth; // calendar instance for previous month
 	/**
@@ -84,6 +84,7 @@ public class CalendarAdapter extends BaseAdapter {
 	public View getView(int position, View convertView, ViewGroup parent) {
 		View v = convertView;
 		TextView dayView;
+		
 		if (convertView == null) { // if it's not recycled, initialize some
 									// attributes
 			LayoutInflater vi = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -106,7 +107,9 @@ public class CalendarAdapter extends BaseAdapter {
 			dayView.setTextColor(Color.WHITE);
 			dayView.setClickable(false);
 			dayView.setFocusable(false);
-		}  else {
+		} 
+
+		else {
 			// setting curent month's days in blue color.
 			dayView.setTextColor(LIGHTBLUE);
 		}

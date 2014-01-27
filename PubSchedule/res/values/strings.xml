@@ -9,6 +9,10 @@
     <string name="datelabel">date</string>
     <string name="log_out">log out</string>
     <string name="unavailability"> Unavailabilty </string>
+    <string name="day"> Day </string>
+    <string name="night"> Night </string>
+    <string name="user"> user </string>
+    
     
     
 

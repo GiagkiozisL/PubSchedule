@@ -1,10 +1,10 @@
 package com.stonesoup.activities;
 
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
-import android.app.FragmentTransaction;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -49,18 +49,12 @@ public class MainActivity extends FragmentActivity
 			startActivity(begin);
 			finish();
 			return true;
-		case R.id.unavailability:
+		case R.id.block:
 			Intent setUnavailabilityDays = new Intent(this, UnavailabilityDialog.class);
 			startActivity(setUnavailabilityDays);
 			finish();
 		}
 		return super.onOptionsItemSelected(item);
 	}
-	
-//	private void showUnavailabilityDialog() {
-//		Intent unavailable = new Intent();
-//		startActivity(unavailable);
-//		finish();
-//		
-//	}
+
 }

@@ -154,7 +154,7 @@ public class DatePicker extends LinearLayout {
 		}
 	}
 
-	String[] months = { "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug",
+	public String[] months = { "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug",
 			"Sep", "Oct", "Nov", "Dec" };
 
 	View.OnClickListener month_plus_listener = new View.OnClickListener() {
@@ -346,7 +346,7 @@ public class DatePicker extends LinearLayout {
 		}
 	}
 
-	TextWatcher date_watcher = new TextWatcher() {
+	public TextWatcher date_watcher = new TextWatcher() {
 
 		@Override
 		public void onTextChanged(CharSequence s, int start, int before,
@@ -382,7 +382,7 @@ public class DatePicker extends LinearLayout {
 		}
 	};
 
-	TextWatcher year_watcher = new TextWatcher() {
+	public TextWatcher year_watcher = new TextWatcher() {
 
 		@Override
 		public void onTextChanged(CharSequence s, int start, int before,
