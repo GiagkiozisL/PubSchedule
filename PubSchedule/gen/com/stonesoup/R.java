@@ -80,11 +80,9 @@ public final class R {
     }
     public static final class id {
         public static final int ImageView01=0x7f090007;
-        public static final int action_settings=0x7f090029;
-        public static final int block=0x7f09002c;
+        public static final int action_settings=0x7f090025;
         public static final int calentar_fragment=0x7f090000;
         public static final int date=0x7f090012;
-        public static final int dateEvent=0x7f090025;
         public static final int date_container=0x7f090018;
         public static final int date_display=0x7f09001a;
         public static final int date_icon=0x7f090013;
@@ -95,7 +93,7 @@ public final class R {
         public static final int gridview=0x7f090010;
         public static final int header=0x7f09000c;
         public static final int list_fragment=0x7f090001;
-        public static final int log_out=0x7f09002a;
+        public static final int log_out=0x7f090026;
         public static final int month_container=0x7f090014;
         public static final int month_display=0x7f090016;
         public static final int month_minus=0x7f090017;
@@ -107,15 +105,11 @@ public final class R {
         public static final int riskValue1=0x7f090004;
         public static final int scrollView1=0x7f090002;
         public static final int settingsSubmitBtn=0x7f090009;
-        public static final int switch1=0x7f090026;
         public static final int text=0x7f090011;
         public static final int textValue2=0x7f090003;
         public static final int textViewProgress=0x7f09000b;
         public static final int timezone=0x7f090022;
         public static final int title=0x7f09000e;
-        public static final int unavCancel=0x7f090028;
-        public static final int unavSend=0x7f090027;
-        public static final int unavailability=0x7f09002b;
         public static final int user=0x7f090023;
         public static final int usernameEditTxt=0x7f090005;
         public static final int usernamelabel=0x7f090024;
@@ -134,7 +128,6 @@ public final class R {
         public static final int fragment_calendar=0x7f030005;
         public static final int fragment_events_list=0x7f030006;
         public static final int list_item_event=0x7f030007;
-        public static final int unavailability_activity=0x7f030008;
     }
     public static final class menu {
         public static final int main=0x7f080000;

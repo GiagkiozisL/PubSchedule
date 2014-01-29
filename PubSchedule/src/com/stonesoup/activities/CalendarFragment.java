@@ -23,6 +23,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.stonesoup.R;
+import com.stonesoup.controller.CalendarAdapter;
 import com.stonesoup.utilities.ParseApplication;
 
 public class CalendarFragment extends Fragment {
@@ -63,7 +64,8 @@ public class CalendarFragment extends Fragment {
 
 		items = new ArrayList<String>();
 		adapter = new CalendarAdapter(getActivity(), month);
-
+		
+		
 		GridView gridview = (GridView) view.findViewById(R.id.gridview);
 		gridview.setAdapter(adapter);
 

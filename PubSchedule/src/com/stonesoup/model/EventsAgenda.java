@@ -6,6 +6,8 @@ import java.util.ArrayList;
 public class EventsAgenda {
 	private static EventsAgenda sEventsAgenda;
 	private ArrayList<Event> mEvents = new ArrayList<Event>();
+	private ArrayList<String> mUserWorkDays = new ArrayList<String>();
+	private String mUsername;
 	
 	private EventsAgenda(){}
 	
@@ -19,13 +21,17 @@ public class EventsAgenda {
 	public void addEvent(Event e) {
 		boolean found = false;
 		for (Event event : mEvents) {
-				if (event.getName().equals(e.getName())) {
+				if (event.getId().equals(e.getId())) {
 					found = true;
 					break;
 				}
 		}
-		if (!found)
+		if (!found){
 			mEvents.add(e);
+			
+			if(e.getName().equals(mUsername))
+				mUserWorkDays.add(e.getDate());
+		}
 	}
 	
 	public void deleteEvent(Event e){
@@ -43,4 +49,18 @@ public class EventsAgenda {
 		}
 		return null;
 	}
+
+	public ArrayList<String> getUserWorkDays() {
+		return mUserWorkDays;
+	}
+	
+	public String getUsername() {
+		return mUsername;
+	}
+
+	public void setUsername(String username) {
+		mUsername = username;
+	}
+
+	
 }

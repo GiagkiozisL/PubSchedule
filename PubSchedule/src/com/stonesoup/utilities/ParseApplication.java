@@ -3,11 +3,7 @@ package com.stonesoup.utilities;
 import android.app.Application;
 
 import com.parse.Parse;
-import com.parse.ParseInstallation;
 import com.parse.ParseUser;
-import com.parse.PushService;
-import com.stonesoup.activities.MainActivity;
-import com.stonesoup.activities.StartupActivity;
 import com.testflightapp.lib.TestFlight;
 
 public class ParseApplication extends Application{

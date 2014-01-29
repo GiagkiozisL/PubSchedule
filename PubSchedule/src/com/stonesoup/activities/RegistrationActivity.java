@@ -1,8 +1,5 @@
 package com.stonesoup.activities;
 
-import java.text.DateFormat;
-import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import android.app.Activity;
@@ -27,67 +24,58 @@ import com.stonesoup.R;
 import com.stonesoup.model.Event;
 import com.stonesoup.model.EventsAgenda;
 
-public class RegistrationActivity extends Activity{
+public class RegistrationActivity extends Activity {
 
-	private EditText username,passEditText;
-	
+	private EditText username, passEditText;
+
+	public static final String PREF_USERNAME = "username";
+
 	private Button submit;
-	String user,pass;
-	private Event eventPopulation;
+	String user, pass;
 	final Context context = this;
 	private ProgressDialog mProgressDialog;
 	public static String myUserName;
-	
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_registration);
-		String currentDateTimeString = DateFormat.getDateInstance().format(new Date());
-		eventPopulation = new Event();
-		eventPopulation.setCurrentDate(currentDateTimeString);
 		username = (EditText) findViewById(R.id.usernameEditTxt);
 		passEditText = (EditText) findViewById(R.id.passwordEditTxt);
-		
+
 		submit = (Button) findViewById(R.id.settingsSubmitBtn);
 		submit.setOnClickListener(new OnClickListener() {
-			
+
 			@Override
 			public void onClick(View v) {
 				user = username.getText().toString();
 				pass = passEditText.getText().toString();
 				// Send data to Parse.com for verification
-				                ParseUser.logInInBackground(user, pass,
-				                        new LogInCallback() {
-				                            public void done(ParseUser user, ParseException e) {
-				                                if (user != null) {
-				                                    // If user exist and authenticated, send user to Main.class
-				                                	
-//				                                    Intent intent = new Intent(RegistrationActivity.this,
-//				                                            MainActivity.class);
-//				                                    startActivity(intent);
-				                                    Toast.makeText(getApplicationContext(),
-				                                            "Successfully Logged in",
-				                                            Toast.LENGTH_LONG).show();
-				                                    eventPopulation = new Event();
-				                                    myUserName = username.getText().toString();
-				                                    eventPopulation.setMyUserName(myUserName);
-				                             
-//				                                    finish();
-				                                   new RemoteDataTask().execute();
-				                                   
-				                                } else {
-				                                    Toast.makeText(
-				                                            getApplicationContext(),
-				                                            "No such user exist, please signup",
-				                                            Toast.LENGTH_LONG).show();
-				                                }
-				                            }
-				                        });
-							}
+				ParseUser.logInInBackground(user, pass, new LogInCallback() {
+					public void done(ParseUser user, ParseException e) {
+						if (user != null) {
+							// If user exist and authenticated, send user to
+							// Main.class
+							Toast.makeText(getApplicationContext(),
+									"Successfully Logged in", Toast.LENGTH_LONG)
+									.show();
+							EventsAgenda.get().setUsername(
+									username.getText().toString());
+
+							new RemoteDataTask().execute();
+
+						} else {
+							Toast.makeText(getApplicationContext(),
+									"No such user exist, please signup",
+									Toast.LENGTH_LONG).show();
+						}
+					}
 				});
+			}
+		});
 
 	}
-	
+
 	private Event createEvent(ParseObject p) {
 		Event event = new Event();
 		if (p.get("username") != null)
@@ -98,10 +86,10 @@ public class RegistrationActivity extends Activity{
 			event.setDate((String) p.get("date"));
 		if (p.get("situation") != null)
 			event.setTimezone((String) p.get("situation"));
-		
+
 		return event;
 	}
-	
+
 	private class RemoteDataTask extends AsyncTask<Void, Void, Void> {
 
 		@Override
@@ -117,7 +105,8 @@ public class RegistrationActivity extends Activity{
 		@Override
 		protected Void doInBackground(Void... params) {
 			try {
-				ParseQuery<ParseObject> query = new ParseQuery<ParseObject>("Program");
+				ParseQuery<ParseObject> query = new ParseQuery<ParseObject>(
+						"Program");
 				query.orderByAscending("createdAt");
 				List<ParseObject> ob = query.find();
 				for (ParseObject p : ob) {
@@ -135,8 +124,8 @@ public class RegistrationActivity extends Activity{
 		@Override
 		protected void onPostExecute(Void result) {
 			mProgressDialog.dismiss();
-			ArrayList<Event> mEv = EventsAgenda.get().getEvents();
-			Intent main  = new Intent(RegistrationActivity.this, MainActivity.class);
+			Intent main = new Intent(RegistrationActivity.this,
+					MainActivity.class);
 			startActivity(main);
 			RegistrationActivity.this.finish();
 		}

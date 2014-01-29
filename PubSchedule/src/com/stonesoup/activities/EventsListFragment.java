@@ -8,7 +8,6 @@ import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v4.app.ListFragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,7 +25,6 @@ import com.stonesoup.utilities.ParseApplication;
 
 public class EventsListFragment extends ListFragment {
 
-	private static final String TAG = "EventsListFragment";
 	private static final int BLACK = Color.rgb(43, 43, 43);
 	private static final int LIGHT_BLUE = Color.rgb(31, 172, 255);
 	
@@ -41,7 +39,6 @@ public class EventsListFragment extends ListFragment {
 		String selectedDay = ParseApplication.getDaySelected();
 		mSelectedDateEvents.clear();
 		for(Event e : mEvents){
-			Log.d(TAG, e.getDate().length() +" " + e.getDate() + " ----- " +selectedDay.length() +" " + selectedDay );
 			if(e.getDate().equals(selectedDay))
 				mSelectedDateEvents.add(e);
 		}
@@ -92,11 +89,8 @@ private class EventsAdapter extends ArrayAdapter<Event>{
 			ImageView workerImageView = (ImageView) convertView.findViewById(R.id.worker);
 			TextView userNameTextView = (TextView) convertView.findViewById(R.id.user);
 			userNameTextView.setTypeface(typeface);
-			TextView dateTextView = (TextView) convertView.findViewById(R.id.date);
-			
 			userNameTextView.setText(e.getName());
-			String selectedDate = e.getDate();
-
+			
 			if (e.getTimezone().equalsIgnoreCase("Night")) {
 				rowLinearLayout.setBackgroundResource(R.drawable.background_view_rounded_night);
 				userNameTextView.setTextColor(LIGHT_BLUE);

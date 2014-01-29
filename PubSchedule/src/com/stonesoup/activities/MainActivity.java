@@ -49,10 +49,6 @@ public class MainActivity extends FragmentActivity
 			startActivity(begin);
 			finish();
 			return true;
-		case R.id.block:
-			Intent setUnavailabilityDays = new Intent(this, UnavailabilityDialog.class);
-			startActivity(setUnavailabilityDays);
-			finish();
 		}
 		return super.onOptionsItemSelected(item);
 	}
