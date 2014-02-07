@@ -1,6 +1,9 @@
 package com.stonesoup.activities;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
@@ -23,6 +26,7 @@ import com.parse.ParseUser;
 import com.stonesoup.R;
 import com.stonesoup.model.Event;
 import com.stonesoup.model.EventsAgenda;
+import com.stonesoup.utilities.ParseApplication;
 
 public class RegistrationActivity extends Activity {
 
@@ -42,6 +46,10 @@ public class RegistrationActivity extends Activity {
 		setContentView(R.layout.activity_registration);
 		username = (EditText) findViewById(R.id.usernameEditTxt);
 		passEditText = (EditText) findViewById(R.id.passwordEditTxt);
+		
+		SimpleDateFormat sdf = new SimpleDateFormat("M/d/yy", Locale.US);
+		String currentDateTime = sdf.format(new Date());
+		ParseApplication.setDaySelected(currentDateTime);
 
 		submit = (Button) findViewById(R.id.settingsSubmitBtn);
 		submit.setOnClickListener(new OnClickListener() {

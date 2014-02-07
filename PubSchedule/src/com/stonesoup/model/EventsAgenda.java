@@ -37,6 +37,10 @@ public class EventsAgenda {
 	public void deleteEvent(Event e){
 		mEvents.remove(e);
 	}
+	
+	public void empryEventsAgenda(){
+		mEvents.clear();
+	}
 
 	public ArrayList<Event> getEvents() {
 		return mEvents;

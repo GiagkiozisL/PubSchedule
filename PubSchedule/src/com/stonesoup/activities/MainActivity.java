@@ -13,6 +13,7 @@ import com.parse.ParseInstallation;
 import com.parse.PushService;
 import com.stonesoup.R;
 import com.stonesoup.activities.CalendarFragment.Callbacks;
+import com.stonesoup.model.EventsAgenda;
 
 public class MainActivity extends FragmentActivity
 	implements Callbacks{
@@ -45,6 +46,7 @@ public class MainActivity extends FragmentActivity
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
 		case R.id.log_out:
+			EventsAgenda.get().empryEventsAgenda();
 			Intent begin = new Intent(this, RegistrationActivity.class);
 			startActivity(begin);
 			finish();

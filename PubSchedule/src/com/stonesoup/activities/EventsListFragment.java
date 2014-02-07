@@ -37,6 +37,7 @@ public class EventsListFragment extends ListFragment {
 	
 	public void updateUI(){
 		String selectedDay = ParseApplication.getDaySelected();
+		if(selectedDay.isEmpty()) return;
 		mSelectedDateEvents.clear();
 		for(Event e : mEvents){
 			if(e.getDate().equals(selectedDay))
@@ -66,7 +67,7 @@ public class EventsListFragment extends ListFragment {
 	@Override
 	public void onResume() {
 		super.onResume();
-		((EventsAdapter)getListAdapter()).notifyDataSetChanged();
+		updateUI();
 	}
 	
 private class EventsAdapter extends ArrayAdapter<Event>{

@@ -6,13 +6,6 @@
         android:title="@string/log_out"
        android:showAsAction="never"
        />
-  <!--   <item android:id="@+id/unavailability"
-        	android:title="@string/unavailability"
-        />
-        <item android:id="@+id/block"
-        android:icon="@drawable/ic_menu_block2"
-        android:orderInCategory="1"
-        android:showAsAction="always" /> -->
     
 
 </menu>
