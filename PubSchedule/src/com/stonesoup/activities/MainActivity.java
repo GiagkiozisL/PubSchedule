@@ -46,7 +46,7 @@ public class MainActivity extends FragmentActivity
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
 		case R.id.log_out:
-			EventsAgenda.get().empryEventsAgenda();
+			EventsAgenda.get().emptyEventsAgenda();
 			Intent begin = new Intent(this, RegistrationActivity.class);
 			startActivity(begin);
 			finish();
