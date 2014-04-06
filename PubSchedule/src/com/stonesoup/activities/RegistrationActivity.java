@@ -47,7 +47,7 @@ public class RegistrationActivity extends Activity {
 		username = (EditText) findViewById(R.id.usernameEditTxt);
 		passEditText = (EditText) findViewById(R.id.passwordEditTxt);
 		
-		SimpleDateFormat sdf = new SimpleDateFormat("M/d/yy", Locale.US);
+		SimpleDateFormat sdf = new SimpleDateFormat("d/M/yy", Locale.US);
 		String currentDateTime = sdf.format(new Date());
 		ParseApplication.setDaySelected(currentDateTime);
 
@@ -113,8 +113,7 @@ public class RegistrationActivity extends Activity {
 		@Override
 		protected Void doInBackground(Void... params) {
 			try {
-				ParseQuery<ParseObject> query = new ParseQuery<ParseObject>(
-						"Program");
+				ParseQuery<ParseObject> query = new ParseQuery<ParseObject>("Program");
 				query.orderByAscending("createdAt");
 				List<ParseObject> ob = query.find();
 				for (ParseObject p : ob) {

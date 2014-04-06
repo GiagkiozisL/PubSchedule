@@ -31,7 +31,7 @@ public class CalendarAdapter extends BaseAdapter {
 	private int calMaxP;
 	private int mnthLength;
 	private String curentDateString;
-	private DateFormat df =  new SimpleDateFormat("yyyy-MM-dd", Locale.US);
+	private DateFormat df =  new SimpleDateFormat("yyyy-dd-MM", Locale.US);
 	private static final int LIGHTBLUE = Color.rgb(31, 172, 255);
 	private static final int DARKRED = Color.rgb(187, 56, 80);
 	private ArrayList<String> items = new ArrayList<String>();
@@ -80,7 +80,7 @@ public class CalendarAdapter extends BaseAdapter {
 		// checking whether the day is in current month or not.
 		TextView dayView = (TextView) convertView.findViewById(R.id.date);
 		String[] str = dateString.split("/");
-		int gridValue = Integer.parseInt(str[1]);
+		int gridValue = Integer.parseInt(str[0]);
 		if ((gridValue > 1) && (position < weekDayThatMonthStarts)) {
 			// setting offdays to white color.
 			dayView.setTextColor(Color.WHITE);
@@ -96,7 +96,7 @@ public class CalendarAdapter extends BaseAdapter {
 			// setting curent month's days in blue color.
 			dayView.setTextColor(LIGHTBLUE);
 		}
-		dayView.setText(str[1]);
+		dayView.setText(str[0]);
 		
 		if (dayString.get(position).equals(curentDateString)) {
 			ParseApplication.setDaySelected(curentDateString);

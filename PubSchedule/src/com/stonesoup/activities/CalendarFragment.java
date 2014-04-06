@@ -8,6 +8,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -93,7 +94,7 @@ public class CalendarFragment extends Fragment {
 				ParseApplication.setDaySelected(selectedGridDate);
 				mCallbacks.onDaySelected();
 				String[] gridvalueString = selectedGridDate.split("/");
-				int dayValue = Integer.parseInt(gridvalueString[1]);
+				int dayValue = Integer.parseInt(gridvalueString[0]);
 				// navigate to next or previous month on clicking offdays.
 				if ((dayValue > 10) && (position < 8)) {
 					setPreviousMonth();
@@ -102,8 +103,11 @@ public class CalendarFragment extends Fragment {
 					setNextMonth();
 					refreshCalendar();
 				}
+				Log.d("DATEEEE:", " oua" +selectedGridDate);
 			}
+			
 		});
+		
 		return view;
 	}
 
