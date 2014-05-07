@@ -75,8 +75,9 @@ public final class R {
         public static final int turntable=0x7f020020;
         public static final int user=0x7f020021;
         public static final int wairtress=0x7f020022;
-        public static final int worker=0x7f020023;
-        public static final int worker_blue=0x7f020024;
+        public static final int wairtress2nd=0x7f020023;
+        public static final int worker=0x7f020024;
+        public static final int worker_blue=0x7f020025;
     }
     public static final class id {
         public static final int ImageView01=0x7f090007;

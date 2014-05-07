@@ -108,6 +108,8 @@ private class EventsAdapter extends ArrayAdapter<Event>{
 				workerImageView.setBackgroundResource(R.drawable.bartender);
 			} else if (e.getPosition().equalsIgnoreCase("Service")) {
 				workerImageView.setBackgroundResource(R.drawable.wairtress);
+			} else if (e.getPosition().equalsIgnoreCase("Service 2nd")) {
+				workerImageView.setBackgroundResource(R.drawable.wairtress2nd);
 			} else if (e.getPosition().equalsIgnoreCase("Kitchen")) {
 				workerImageView.setBackgroundResource(R.drawable.chef);
 			} else if (e.getPosition().equalsIgnoreCase("Dj")) {

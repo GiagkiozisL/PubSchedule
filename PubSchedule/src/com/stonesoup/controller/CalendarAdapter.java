@@ -171,17 +171,18 @@ public class CalendarAdapter extends BaseAdapter {
 	
 	private String formatDate(String[] s){
 		StringBuilder l = new StringBuilder();
-		if(s[1].startsWith("0")){
-			l.append(s[1].replaceFirst("0", ""));
-		} else {
+//		if(s[1].startsWith("0")){
+//			l.append(s[1].replaceFirst("0", ""));
+//		} else {
 			l.append(s[1]);
-		}
+		//}
 		l.append("/");
-		if(s[2].startsWith("0")){
-			l.append(s[2].replaceFirst("0", ""));
-		} else {
+//		if(s[2].startsWith("0")){
+//			l.append(s[2].replaceFirst("0", ""));
+//		} else
+//		{
 			l.append(s[2]);
-		}
+		//}
 		l.append("/");
 		l.append(s[0].substring(2, 4));
 		return l.toString();
